@@ -1,0 +1,24 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wave-blue" x1="0%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#4A6FA5"/>
+      <stop offset="100%" stop-color="#6B8DC5"/>
+    </linearGradient>
+    <linearGradient id="wave-warm" x1="50%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4B896" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#E8D4BC" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <!-- Blue wave (front) -->
+  <path 
+    d="M1 28 Q5 28 9 18 Q13 8 16 8 Q19 8 22 16 Q26 24 30 27 L30 28 L1 28 Z" 
+    fill="url(#wave-blue)"
+  />
+  <!-- Warm wave (back) -->
+  <path 
+    d="M10 28 Q14 28 17 20 Q20 12 22 12 Q24 12 26 18 Q28 24 31 26 L31 28 L10 28 Z" 
+    fill="url(#wave-warm)"
+  />
+  <!-- Peak dot -->
+  <circle cx="16" cy="4" r="2.5" fill="#4A6FA5"/>
+</svg>
