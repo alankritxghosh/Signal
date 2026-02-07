@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { WaitlistForm } from '@/app/components/WaitlistForm';
 
 export function Footer() {
@@ -96,6 +97,20 @@ export function Footer() {
             
             {/* Links */}
             <nav className="flex items-center gap-8" aria-label="Footer navigation">
+              <Link
+                to="/blog"
+                className="transition-colors"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '14px',
+                  color: 'var(--color-text-tertiary)',
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-text-primary)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-text-tertiary)'}
+              >
+                Blog
+              </Link>
               <FooterLink href="/privacy">Privacy</FooterLink>
               <FooterLink href="/terms">Terms</FooterLink>
               <FooterLink href="mailto:hello@signal.app">Contact</FooterLink>

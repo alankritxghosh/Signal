@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { NavBar } from '@/app/components/NavBar';
 import { HeroBackground } from '@/app/components/HeroBackground';
 import { WaitlistForm } from '@/app/components/WaitlistForm';
@@ -9,8 +10,20 @@ import { FeatureCard } from '@/app/components/FeatureCard';
 import { WhyJoinEarly } from '@/app/components/WhyJoinEarly';
 import { Footer } from '@/app/components/Footer';
 import { StickyFloatingCTA } from '@/app/components/StickyFloatingCTA';
+import { BlogPage } from '@/app/components/blog/BlogPage';
+import { BlogPostPage } from '@/app/components/blog/BlogPostPage';
 
 export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog/:slug" element={<BlogPostPage />} />
+    </Routes>
+  );
+}
+
+function LandingPage() {
   const waitlistRef = useRef<HTMLDivElement>(null);
 
   const scrollToWaitlist = () => {

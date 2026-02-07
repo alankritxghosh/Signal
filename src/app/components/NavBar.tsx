@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 interface NavBarProps {
   onWaitlistClick: () => void;
@@ -36,8 +37,8 @@ export function NavBar({ onWaitlistClick }: NavBarProps) {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a 
-          href="/" 
+        <Link 
+          to="/" 
           className="flex items-center gap-2.5 group"
           aria-label="Signal - Home"
         >
@@ -81,20 +82,39 @@ export function NavBar({ onWaitlistClick }: NavBarProps) {
           >
             Signal
           </span>
-        </a>
+        </Link>
 
-        {/* CTA Button */}
-        <button
-          type="button"
-          onClick={onWaitlistClick}
-          className="glow-button px-5 py-2.5 text-white font-medium text-sm rounded-xl transition-all hover:scale-105"
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            background: 'var(--color-accent-gradient)',
-          }}
-        >
-          Join Waitlist
-        </button>
+        {/* Nav Links + CTA */}
+        <div className="flex items-center gap-6">
+          <Link
+            to="/blog"
+            className="hidden sm:inline-block transition-colors"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '14px',
+              fontWeight: 500,
+              color: 'var(--color-text-secondary)',
+              textDecoration: 'none',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-text-primary)'}
+            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-text-secondary)'}
+          >
+            Blog
+          </Link>
+
+          {/* CTA Button */}
+          <button
+            type="button"
+            onClick={onWaitlistClick}
+            className="glow-button px-5 py-2.5 text-white font-medium text-sm rounded-xl transition-all hover:scale-105"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              background: 'var(--color-accent-gradient)',
+            }}
+          >
+            Join Waitlist
+          </button>
+        </div>
       </div>
     </nav>
   );

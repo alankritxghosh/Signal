@@ -701,6 +701,36 @@ input:focus-visible {
   background: linear-gradient(90deg, transparent, var(--color-border), transparent);
 }
 
+/* ============================================
+   Blog Styles
+   ============================================ */
+
+/* Pull Quote - Standout sentences in blog posts */
+.blog-pull-quote {
+  position: relative;
+  padding: 32px 40px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-left: 3px solid var(--color-accent-primary);
+  border-radius: 16px;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+@supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+  .blog-pull-quote {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+}
+
+/* Blog Section Divider */
+.blog-section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
 /* Noise Texture Overlay - Subtle for light theme */
 .noise-overlay {
   position: absolute;
